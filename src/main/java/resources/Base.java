@@ -1,11 +1,15 @@
 package resources;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -43,6 +47,16 @@ public class Base {
 		
 		return driver; //So that it can be used in other classes or tests
 
+	}
+	
+	
+	// Screenshot Code
+	
+	public void getScreenshotPath(String testMethodName, WebDriver driver) throws IOException {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		String dest = System.getProperty("user.dir")+"\\reports\\"+testMethodName+".png";
+		FileUtils.copyFile(source, new File(dest));
 	}
 	
 

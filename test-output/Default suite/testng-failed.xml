@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.ValidateNavigationBar">
+      <class name="tests.ValidateTitle">
         <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
           <include name="basePagenavigation"/>
         </methods>
-      </class> <!-- tests.ValidateNavigationBar -->
+      </class> <!-- tests.ValidateTitle -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

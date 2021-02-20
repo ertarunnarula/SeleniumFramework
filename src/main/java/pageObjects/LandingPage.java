@@ -23,7 +23,7 @@ public class LandingPage {
 		return driver.findElement(signIn);
 	}
 	
-	public WebElement getText() {
+	public WebElement getTitle() {
 		return driver.findElement(title);
 	}
 	
