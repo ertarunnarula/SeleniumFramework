@@ -2,6 +2,7 @@ package tests;
 
 import java.io.IOException;
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -28,6 +29,7 @@ public class HomePage extends Base{
 		
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
+		driver.manage().window().setPosition(new Point(0, -2000));
 		LandingPage lp = new LandingPage(driver);
 		lp.getLogin().click();
 		
